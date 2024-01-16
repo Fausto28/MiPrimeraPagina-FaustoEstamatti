@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> 
+            {% block title %}
+                Alquila CAR
+            {% endblock title %}
+        </title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'core/assets/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        {% include 'core/navbar.html' %}
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            {% block content %}
+        
+            {% endblock content %}
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'core/img/auto.png' %}" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Nuestro servicio</h1>
+                    <p>Encuentra el vehículo que necesitas aquí, a tan solo un click con la confianza y garantía de más de 20 años de servicio. Nos adaptamos a tus requerimientos, desde autos deportivos hasta motorhomes para que tu experiencia sea sublime y sientas nuestro vehículo como propio. Desde Argentina para todo América del Sur.</p>
+                    <a class="btn btn-primary" href="#!">Consultanos!</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">"La confianza de saber que nuestro servicio es garantía de su seguridad y confort"</p></div>
+            </div>
+            <!-- Content Row-->
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Automóviles</h2>
+                            <p class="card-text">Cientos de modelos con distintas funcionalidades, desde autos deportivos hasta SUV. Adaptable a lo que estás buscando.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Más información</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Pick-Ups</h2>
+                            <p class="card-text">Ideales para viajes largos donde el equipaje es abundante o para terreneos offroad, contá con las mejores camionetas 4x4.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Más información</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Motorhomes</h2>
+                            <p class="card-text">La comodidad de tu hogar dentro de un vehículo, todas las comodidades para que tu viaje sea completamente placentero. Contamos con flota para 2, 4 y 6 personas.</p>
+                        </div>
+                        <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Más información</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Alquila CAR SA</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'core/js/scripts.js' %}"></script>
+    </body>
+</html>

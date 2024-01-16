@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    
+<h2>Nuestras unidades</h2>
+<h3>Listado de autos disponibles:</h3>
+
+    <ul>
+        {% for auto in autos %}
+            <li> {{ auto}} </li>
+            {% endfor %}
+        </ul>
+        
+    <button><a href="{% url 'cliente:index' %}">Atrás</a></button>    
+
+{% endblock content %}
