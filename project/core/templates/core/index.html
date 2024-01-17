@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{%load static%} {#Debe ir primero el extends#}
 {% block title %}
     Alquila CAR | Inicio    
 {% endblock title %}
@@ -11,4 +11,26 @@
 
     <button><a href="{% url 'cliente:index' %}">Cliente</a></button>
     <button><a href="{% url 'admin:index' %}">Administración</a></button>
-{% endblock content %}
+
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'core/img/auto.png' %}" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Nuestro servicio</h1>
+                    <p>Encuentra el vehículo que necesitas aquí, a tan solo un click con la confianza y garantía de más de 20 años de servicio. Nos adaptamos a tus requerimientos, desde autos deportivos hasta motorhomes para que tu experiencia sea sublime y sientas nuestro vehículo como propio. Desde Argentina para todo América del Sur.</p>
+                    <a class="btn btn-success" href="https:/wa.me/5493435047705" target='_blank'>WhatsApp</a>
+                </div>
+            </div>
+            <!-- Call to Action-->
+            <div class="card text-white bg-secondary my-5 py-4 text-center">
+                <div class="card-body"><p class="text-white m-0">"La confianza de saber que nuestro servicio es garantía de su seguridad y confort"</p></div>
+            
+            </div>
+            <!--Content row-->
+            <div class="row gx-4 gx-lg-5">
+                {%include 'core/tarjeta.html' with titulo='Automóviles' texto='Cientos de modelos con distintas funcionalidades, desde autos deportivos hasta SUV. Adaptable a lo que estás buscando.'%}
+                {%include 'core/tarjeta.html' with titulo='Pick-Ups' texto='Ideales para viajes largos donde el equipaje es abundante o para terreneos offroad, contá con las mejores camionetas 4x4.'%}
+                {%include 'core/tarjeta.html' with titulo='Motorhomes' texto='La comodidad de tu hogar dentro de un vehículo, todas las comodidades para que tu viaje sea completamente placentero. Contamos con flota para 2, 4 y 6 personas.'%}
+
+            </div>
+    {% endblock content %}
