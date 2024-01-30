@@ -29,6 +29,7 @@ def cliente_create(request):
         form = forms.ClienteForm()
     return render(request, "cliente/cliente_create.html", {"form": form})
 
+
 def auto_list(request):
     autos=models.Auto.objects.all()
     context={'autos': autos}

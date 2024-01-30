@@ -5,7 +5,7 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 from .models import *
 from django.urls import reverse_lazy
 from .forms import *
-from .models import Producto
+
 
 # Create your views here.
 
@@ -19,15 +19,15 @@ def productocategoria_list(request):
     return render(request, "producto/productocategoria_list.html", context)
 '''
 
-class Productocategorialist(ListView):
-    model = ProductoCategoria
+class Productolist(ListView):
+    model = Producto
     
     def get_queryset(self) -> QuerySet[Any]:
         if self.request.GET.get('consulta'):
             consultar=self.request.GET.get('consulta')
-            object_list=ProductoCategoria.objects.filter(categoria__icontains=consultar)    
+            object_list=Producto.objects.filter(marca__icontains=consultar, modelo__icontains=consultar)    
         else: 
-            object_list=ProductoCategoria.objects.all()
+            object_list=Producto.objects.all()
         return object_list
     
     

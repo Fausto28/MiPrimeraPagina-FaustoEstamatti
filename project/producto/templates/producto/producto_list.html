@@ -8,12 +8,12 @@
 
     <h1> Vehículos </h1>
     <div class='py-lg-4'>
-        <form action='{%url 'producto:productocategoria_list'%}'>
+        <form action='{%url 'producto:producto_list'%}'>
             <input type='text' name='consulta' placeholder='Buscar...'>
         </form>
     {%for object in object_list%}
         <ul>
-            <li>{{object.id}} - {{object.categoria}} </li>
+            <li>{{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} </li>
         </ul>
     </div>
     {%endfor%}
