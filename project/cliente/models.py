@@ -1,12 +1,13 @@
 from django.db import models
-
+from producto.models import Producto
+'''
 class Auto(models.Model):
     marca=models.CharField(max_length=50)
     modelo=models.CharField(max_length=50)
     
     def __str__(self) -> str:
         return f"{self.marca}, {self.modelo}"
-
+'''
 class Pais(models.Model):
     nombre = models.CharField(max_length=100)
 
@@ -25,7 +26,7 @@ class Cliente(models.Model):
     pais_origen_id = models.ForeignKey(
         Pais, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="país de origen"
     )
-    automovil=models.ForeignKey(Auto, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='auto')
+    automovil=models.ForeignKey(Producto, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='auto')
 
     def __str__(self) -> str:
         return f"{self.apellido}, {self.nombre}"

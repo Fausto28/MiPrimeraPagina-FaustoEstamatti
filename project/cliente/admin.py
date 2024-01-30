@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import Cliente, Pais, Auto
+from .models import Cliente, Pais
 
 # Register your models here.
 
 
 admin.site.register(Pais)
 admin.site.register(Cliente)
-admin.site.register(Auto)
+#admin.site.register(Auto)

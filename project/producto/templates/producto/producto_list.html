@@ -9,12 +9,18 @@
     <h1> Vehículos </h1>
     <div class='py-lg-4'>
         <form action='{%url 'producto:producto_list'%}'>
-            <input type='text' name='consulta' placeholder='Buscar...'>
+            <input type='text' name='consulta' placeholder='Buscar por marca...'>
         </form>
+    
     {%for object in object_list%}
-        <ul>
-            <li>{{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} </li>
-        </ul>
+
+    <ul>
+        <li>
+            {{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} 
+            <a href='{% url 'producto:producto_update' object.pk %}'> Modificar </a>
+            <a href='{% url 'producto:producto_delete' object.pk %}'> Eliminar </a>
+        </li>
+    </ul>
     </div>
     {%endfor%}
 {%endblock content%}

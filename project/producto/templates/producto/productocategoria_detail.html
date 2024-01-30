@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{%block title%}
+    Detalles de categoría
+{%endblock title%}
+
+{%block content%}
+
+    <h1> Vehículos </h1>
+
+    <ul>
+        <li>{{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} </li>
+    </ul>
+    </div>
+    {%endfor%}
+{%endblock content%}

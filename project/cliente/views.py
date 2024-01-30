@@ -30,7 +30,9 @@ def cliente_create(request):
     return render(request, "cliente/cliente_create.html", {"form": form})
 
 
+'''
 def auto_list(request):
     autos=models.Auto.objects.all()
     context={'autos': autos}
     return render(request,'cliente/autos_list.html',context)
+'''
