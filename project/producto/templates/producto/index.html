@@ -8,9 +8,17 @@
     <h1>Productos</h1>
 
     <div class='d-grid gap-3'>
-        <a href='{% url 'producto:productoscategoria_list'%}'>
+        <a href='{% url 'producto:productocategoria_list'%}'>
             <button class='btn btn-primary'>
-                Categorías
+                Vehículos
             </button>
         </a>
+
+        <a href='{% url 'producto:productocategoria_create'%}'>
+            <button class='btn btn-primary'>
+                Añadir vehículo
+            </button>
+        </a>
+
+    </div>
 {%endblock content%}

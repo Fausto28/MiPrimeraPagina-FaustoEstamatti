@@ -2,7 +2,11 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
-from .models import ProductoCategoria
+from .models import *
+from django.urls import reverse_lazy
+from .forms import *
+from .models import Producto
+
 # Create your views here.
 
 def index(request):
@@ -25,3 +29,11 @@ class Productocategorialist(ListView):
         else: 
             object_list=ProductoCategoria.objects.all()
         return object_list
+    
+    
+class ProductoCreate(CreateView):
+    model = Producto
+    form_class = ProductoForm
+    #form_class = forms.ProductoForm
+    success_url=reverse_lazy('producto:index')
+    field = '__all__'
