@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{%block title%}
+    Productos
+{%endblock title%}
+
+{%block content%}
+    <h1>Productos</h1>
+
+    <div class='d-grid gap-3'>
+        <a href='{% url 'producto:productoscategoria_list'%}'>
+            <button class='btn btn-primary'>
+                Categorías
+            </button>
+        </a>
+{%endblock content%}

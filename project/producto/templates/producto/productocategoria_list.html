@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{%block title%}
+    Categorías
+{%endblock title%}
+
+{%block content%}
+
+    <h1> Categorías de productos </h1>
+    <div class='py-lg-4'>
+        <form action='{%url 'producto:productocategoria_list'%}'>
+            <input type='text' name='consulta' placeholder='Buscar...'>
+        </form>
+    {%for object in object_list%}
+        <ul>
+            <li>{{object.id}} - {{object.categoria}} </li>
+        </ul>
+    </div>
+    {%endfor%}
+{%endblock content%}
