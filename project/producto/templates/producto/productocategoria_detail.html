@@ -6,11 +6,10 @@
 
 {%block content%}
 
-    <h1> Vehículos </h1>
+    <h1> {{objeto.categoria}} </h1>
 
-    <ul>
-        <li>{{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} </li>
-    </ul>
-    </div>
+    <p>
+        {{objeto.descripcion}} 
+    </p>
     {%endfor%}
 {%endblock content%}

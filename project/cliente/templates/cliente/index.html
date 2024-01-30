@@ -10,13 +10,14 @@
 <h2>CLIENTE</h2>
 
     <div>
-        <button><a href="{% url 'cliente:pais_list' %}">Lista de países</a></button>
-        <button><a href="{% url 'cliente:cliente_list' %}">Lista de clientes</a></button>
-        <button><a href="{% url 'cliente:cliente_create' %}">Crear cliente</a></button>
+        <a href="{% url 'cliente:pais_list' %}" class='btn btn-primary me-2'>Lista de países</a>
+        <a href="{% url 'cliente:cliente_list' %}" class='btn btn-primary me-2'>Lista de clientes</a>
+        <a href="{% url 'cliente:cliente_create' %}" class='btn btn-primary me-2'>Crear cliente</a>
         {#<button><a href="{% url 'cliente:autos_list' %}">Lista de Autos</a></button>#}
     </div>
+    
     <div>
-        <button><a href="{% url 'core:index' %}">Inicio</a></button>    
+        <a href="{% url 'core:index' %}" class='btn btn-primary me-2'>Inicio</a>   
     </div>
     
 {% endblock content %}

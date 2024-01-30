@@ -5,22 +5,32 @@
 {%endblock title%}
 
 {%block content%}
-
-    <h1> Vehículos </h1>
-    <div class='py-lg-4'>
-        <form action='{%url 'producto:producto_list'%}'>
-            <input type='text' name='consulta' placeholder='Buscar por marca...'>
-        </form>
+    <div class='container'>
+        <h1 class='nt-4'> Listado de Vehículos </h1>
     
-    {%for object in object_list%}
-
-    <ul>
-        <li>
-            {{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}} 
-            <a href='{% url 'producto:producto_update' object.pk %}'> Modificar </a>
-            <a href='{% url 'producto:producto_delete' object.pk %}'> Eliminar </a>
-        </li>
-    </ul>
+        <div class='nb-4'>
+            <form action='{%url 'producto:producto_list'%}'>
+                <input type='text' name='consulta' placeholder='Buscar por marca...' class='form-control'>
+            </form>
+        </div>
+        
+        <table class='table table-stripped'>
+            <thead>
+                <tr>
+                    <th scope='col'> Vehículo y tarifa</th>
+                    <th scope='col'> Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for object in object_list%}
+                <tr>
+                <td>{{object.marca}}, {{object.modelo}} - {{object.unidad_medida}} {{object.precio}}</td> 
+                <td>
+                    <a href='{% url 'producto:producto_update' object.pk %}'class='btn btn-warning me-2'> Modificar </a>
+                    <a href='{% url 'producto:producto_delete' object.pk %}'class='btn btn-danger me-2'> Eliminar </a>
+                    <a href='{% url 'cliente:cliente_create' %}'class='btn btn-primary me-2'> Solicitar Unidad </a>
+                </td>
+            </tr>
     </div>
     {%endfor%}
 {%endblock content%}
