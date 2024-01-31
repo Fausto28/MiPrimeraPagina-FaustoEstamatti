@@ -1,8 +1,11 @@
 from django.urls import path
-
-from .views import index, about 
+from django.views.generic.base import TemplateView
+from .views import *
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path("", index, name="index"),
-    path("about/", about, name="about")
+    path("about/", TemplateView.as_view(template_name='core/about.html'), name="about"),
+    path('login/', CustomLoginView.as_view(template_name='core/login.html'), name='login'),
+    path('logout/', LogoutView.as_view(template_name='core/logout.html'), name='logout'),
 ]

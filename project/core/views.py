@@ -1,7 +1,8 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.urls import reverse
-
+from django.contrib.auth.views import LoginView
+from .forms import *
 def index(request):
     contexto={'index': False, 'about':False, 'clientes':False, 'productos':False}
     if request.path == reverse('core:index'):
@@ -20,3 +21,7 @@ def index(request):
 def about(request):
     
     return render(request, "core/about.html")
+
+class CustomLoginView(LoginView):
+    authentication_form = CustomAuthenticationForm
+    template_name = "core/login.html"
