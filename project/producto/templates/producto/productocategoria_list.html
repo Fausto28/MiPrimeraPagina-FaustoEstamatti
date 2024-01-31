@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{%block title%}
+    Categorías
+{%endblock title%}
+
+{%block content%}
+    <div class='container'>
+        <h1 class='nt-4'> Listado de Categorías </h1>
+    
+        <div class='nb-4'>
+        <table class='table table-stripped'>
+            <thead>
+                <tr>
+                    <th scope='col'> Categoría</th>
+                    <th scope='col'> Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for object in object_list%}
+                <tr>
+                <td>{{object.categoria}}</td> 
+                <td>
+                    <a href='{% url 'producto:productocategoria_detail' object.pk %}'class='btn btn-warning me-2'> Más detalles </a>
+                </td>
+            </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+{%endblock content%}

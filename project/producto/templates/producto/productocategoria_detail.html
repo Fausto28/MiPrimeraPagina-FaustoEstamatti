@@ -1,15 +1,16 @@
-{% extends 'core/base.html' %}
-
-{%block title%}
-    Detalles de categoría
-{%endblock title%}
+{%extends 'core/base.html'%}
 
 {%block content%}
 
-    <h1> {{objeto.categoria}} </h1>
-
-    <p>
-        {{objeto.descripcion}} 
-    </p>
+    <div class='d-flex justify-content-center align-items-center' style='height: 100vh'>
+        <div class='text-center'>
+            <h1 class='display-4'>{{productocategoria.categoria}}</h1>
+            <p class='lead'> 
+                {{productocategoria.descripcion}} 
+            </p>
+        </div>
+    </div>
+ 
+    
 
 {%endblock content%}

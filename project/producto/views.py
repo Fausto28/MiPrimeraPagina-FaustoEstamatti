@@ -29,6 +29,16 @@ class Productolist(ListView):
         else: 
             object_list=Producto.objects.all()
         return object_list
+class ProductoCategorialist(ListView):
+    model = ProductoCategoria
+    
+    def get_queryset(self) -> QuerySet[Any]:
+        if self.request.GET.get('consulta'):
+            consultar=self.request.GET.get('consulta')
+            object_list=ProductoCategoria.objects.filter(categoria__icontains=consultar)    
+        else: 
+            object_list=ProductoCategoria.objects.all()
+        return object_list
     
     
 class ProductoCreate(CreateView):
@@ -53,3 +63,5 @@ class ProductoDelete(DeleteView):
     model = Producto
     success_url=reverse_lazy('producto:index')
     field = '__all__'
+    
+
