@@ -1,37 +1,33 @@
+
 {% extends 'core/base.html' %}
 
+{%block title%}
+    Vehículos
+{%endblock title%}
 
-{% block content %}
-    <h2>CLIENTES</h2>
-    <h3>Listado de clientes:</h3>
-
-    <table border="7">
-        <thead>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Nacimiento</th>
-            <th>Automóvil</th>
-        </thead>
-        <tbody>
-            {% for cliente in clientes %}
+{%block content%}
+    <div class='container'>
+        <h1 class='nt-4'> Listado de clientes </h1>
+        
+        <table class='table table-stripped'>
+            <thead>
                 <tr>
-                    <td>{{ cliente.nombre }}</td>
-                    <td>{{ cliente.apellido }}</td>
-                    {% if cliente.nacimiento %}
-                        <td>{{ cliente.nacimiento }}</td>
-                    {% else %}
-                        <td>Sin registro</td>
-                    {% endif %}
-                    {% if cliente.automovil %}
-                        <td>{{ cliente.automovil }}</td>
-                    {% else %}
-                        <td>Sin registro</td>
-                    {% endif %}
+                    <th scope='col'> Cliente</th>
+                    <th scope='col'> Nacimiento</th>
+                    <th scope='col'> Automóvil</th>
                 </tr>
-            {% endfor %}
+            </thead>
+            <tbody>
+                {%for cliente in clientes%}
+                <tr>
+                <td>{{cliente.nombre}}, {{cliente.apellido}}</td>
+                    
+                <td>{{cliente.nacimiento}}</td>
 
-        </tbody>
-    </table>
+                <td>{{cliente.automovil}}</td>
 
-    <button><a href="{% url 'cliente:index' %}">Atrás</a></button>    
-{% endblock content %}
+            </tr>
+    </div>
+    {%endfor%}
+{%endblock content%}
+

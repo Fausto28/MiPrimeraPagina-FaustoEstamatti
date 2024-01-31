@@ -1,23 +1,35 @@
 {% extends 'core/base.html' %}
 
-{% block title %}
-    Cliente | Inicio
-{% endblock title %}
+{%block title%}
+    Clientes
+{%endblock title%}
 
+{%block content%}
+    <h1>Cliente</h1>
 
-{% block content %}
-    
-<h2>CLIENTE</h2>
+    <div class='d-grid gap-3'>
+        <a href='{% url 'cliente:cliente_list'%}'>
+            <button class='btn btn-primary'>
+                Lista de clientes
+            </button>
+        </a>
 
-    <div>
-        <a href="{% url 'cliente:pais_list' %}" class='btn btn-primary me-2'>Lista de países</a>
-        <a href="{% url 'cliente:cliente_list' %}" class='btn btn-primary me-2'>Lista de clientes</a>
-        <a href="{% url 'cliente:cliente_create' %}" class='btn btn-primary me-2'>Crear cliente</a>
-        {#<button><a href="{% url 'cliente:autos_list' %}">Lista de Autos</a></button>#}
+        <a href='{% url 'cliente:cliente_create'%}'>
+            <button class='btn btn-primary'>
+                Crear cliente
+            </button>
+        </a>
+
+        <a href='{% url 'cliente:pais_list'%}'>
+            <button class='btn btn-primary'>
+                Lista de países
+            </button>
+        </a>
+        
+        <a href='{% url 'core:index'%}'>
+            <button class='btn btn-primary'>
+                Inicio
+            </button>
+        </a>
     </div>
-    
-    <div>
-        <a href="{% url 'core:index' %}" class='btn btn-primary me-2'>Inicio</a>   
-    </div>
-    
-{% endblock content %}
+{%endblock content%}
