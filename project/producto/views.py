@@ -40,7 +40,7 @@ class ProductoCreate(CreateView):
     
 class ProductoCategoriaDetail(DetailView):
     model = ProductoCategoria
-    success_url=reverse_lazy('core:index')
+    #success_url=reverse_lazy('core:index')
 
     
 class ProductoUpdate(UpdateView):
