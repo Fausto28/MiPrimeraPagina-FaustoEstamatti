@@ -35,3 +35,6 @@
 
 ### Ejecutar el servidor:
 - python manage.py runserver
+
+### Link a video de youtube explicativo:
+- https://www.youtube.com/watch?v=EIf7sPij64o
