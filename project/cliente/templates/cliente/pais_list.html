@@ -1,16 +1,24 @@
 {% extends 'core/base.html' %}
 
-{% block content %}
+{%block title%}
+    Países
+{%endblock title%}
+
+{%block content%}
+    <div class='container'>
+        <h1 class='nt-4'> Listado de países </h1>
     
-<h2>Encontranos en todo América del Sur</h2>
-<h3>Lista de Países</h3>
-
-    <ul>
-        {% for pais in paises %}
-            <li> {{ pais.nombre }} </li>
-            {% endfor %}
-        </ul>
-        
-    <button><a href="{% url 'cliente:index' %}">Atrás</a></button>    
-
-{% endblock content %}
+        <table class='table table-stripped'>
+            <thead>
+                <tr>
+                    <th scope='col'> Países </th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for pais in paises%}
+                <tr>
+                <td>{{pais.nombre}}</td> 
+            </tr>
+    </div>
+    {%endfor%}
+{%endblock content%}
