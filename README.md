@@ -38,3 +38,7 @@
 
 ### Link a video de youtube explicativo:
 - https://www.youtube.com/watch?v=EIf7sPij64o
+
+### Usuario de administrador:
+- Usuario: admin
+- Contraseña: 123
